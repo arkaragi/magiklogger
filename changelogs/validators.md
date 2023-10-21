@@ -2,7 +2,7 @@
 
 ## Version 1.0.0 - [10/22/2023]
 
-## Added
+### Added
 
     Introduced the LoggerValidators class for validating logging-related parameters.
 
@@ -24,7 +24,7 @@
     Added a test suite for the validators.py module.
     
 
-## Future Extensions
+### Future Extensions
 
     Integrate more complex validation checks, such as regular expression matching for certain parameters.
 
