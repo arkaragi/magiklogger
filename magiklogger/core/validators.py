@@ -267,7 +267,6 @@ class LoggerValidators:
         backup_count: int
             Number of backup log files to keep.
             Should be a positive integer less than or equal to 20.
-
         """
 
         # Using the existing integer validation method
@@ -317,11 +316,6 @@ class LoggerValidators:
         use_color: bool
             A flag determining whether logs should be color-coded for
             enhanced readability.
-
-        Raises
-        ------
-        TypeError
-            If the provided parameter is not of type 'bool'.
         """
 
         # Using the existing boolean validation method
