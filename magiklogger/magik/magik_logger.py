@@ -28,6 +28,8 @@ Features
     - Color-Coded Logging: Enhance your console logs with color-coded outputs
       based on the log level, ensuring better readability and instant recognition
       of log severities.
+
+Version: 1.0.0
 """
 
 import logging

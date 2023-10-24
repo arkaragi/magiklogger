@@ -1,5 +1,7 @@
 """
 Test suite for the magik/magik_logger.py module
+
+Version: 1.0.0
 """
 
 import logging
@@ -53,9 +55,11 @@ class TestMagikLogger(unittest.TestCase):
         """
         Test the debug method.
         """
+
         # Define a debug message and call the debug method
         msg = "Debug message"
         self.logger.debug(msg)
+
         # Assert the mock method was called with the correct parameters
         mock_log.assert_called_with(logging.DEBUG, msg)
 
@@ -64,9 +68,11 @@ class TestMagikLogger(unittest.TestCase):
         """
         Test the info method.
         """
+
         # Define an info message and call the info method
         msg = "Info message"
         self.logger.info(msg)
+
         # Assert the mock method was called with the correct parameters
         mock_log.assert_called_with(logging.INFO, msg)
 
@@ -75,9 +81,11 @@ class TestMagikLogger(unittest.TestCase):
         """
         Test the warning method.
         """
+
         # Define a warning message and call the warning method
         msg = "Warning message"
         self.logger.warning(msg)
+
         # Assert the mock method was called with the correct parameters
         mock_log.assert_called_with(logging.WARNING, msg)
 
@@ -86,9 +94,11 @@ class TestMagikLogger(unittest.TestCase):
         """
         Test the error method.
         """
+
         # Define an error message and call the error method
         msg = "Error message"
         self.logger.error(msg)
+
         # Assert the mock method was called with the correct parameters
         mock_log.assert_called_with(logging.ERROR, msg)
 
@@ -97,9 +107,11 @@ class TestMagikLogger(unittest.TestCase):
         """
         Test the critical method.
         """
+
         # Define a critical message and call the critical method
         msg = "Critical message"
         self.logger.critical(msg)
+
         # Assert the mock method was called with the correct parameters
         mock_log.assert_called_with(logging.CRITICAL, msg)
 
@@ -108,6 +120,7 @@ class TestMagikLogger(unittest.TestCase):
         """
         Combined log levels tests
         """
+
         # Define the log levels and their corresponding constants
         log_levels = {
             "debug": logging.DEBUG,
@@ -116,6 +129,7 @@ class TestMagikLogger(unittest.TestCase):
             "error": logging.ERROR,
             "critical": logging.CRITICAL
         }
+
         # Iterate through the log levels and test each one
         for level, log_const in log_levels.items():
             msg = f"{level} message"
@@ -129,6 +143,7 @@ class TestMagikLogger(unittest.TestCase):
         This method verifies if the TerasLogger instance is created correctly
         with the provided configurations during the setup process.
         """
+
         # Assert that the TerasLogger instance is not None
         self.assertIsNotNone(self.logger)
 
@@ -153,6 +168,7 @@ class TestMagikLogger(unittest.TestCase):
         This method verifies if the enable_console_logging method correctly
         updates the log_to_console attribute.
         """
+
         # Set enable to True
         enable = True
         self.logger.enable_console_logging(enable)
@@ -168,6 +184,7 @@ class TestMagikLogger(unittest.TestCase):
         This method verifies if the enable_console_logging method correctly
         updates the log_to_console attribute when passed a False argument.
         """
+
         # Set enable to False
         enable = False
         self.logger.enable_console_logging(enable)
@@ -183,6 +200,7 @@ class TestMagikLogger(unittest.TestCase):
         This method verifies if the enable_file_logging method correctly
         updates the log_to_file attribute.
         """
+
         # Set enable to True
         enable = True
         self.logger.enable_file_logging(enable)
@@ -198,6 +216,7 @@ class TestMagikLogger(unittest.TestCase):
         This method verifies if the enable_file_logging method correctly
         updates the log_to_file attribute when passed a False argument.
         """
+
         # Set enable to False
         enable = False
         self.logger.enable_file_logging(enable)
@@ -213,6 +232,7 @@ class TestMagikLogger(unittest.TestCase):
         This method tests whether the logger correctly logs messages
         to a file.
         """
+
         # Enable file logging
         self.logger.enable_file_logging(enable=True)
 
@@ -235,6 +255,7 @@ class TestMagikLogger(unittest.TestCase):
         This method tests whether the logger correctly logs messages
         to the console.
         """
+
         # Enable console logging
         self.logger.enable_console_logging(enable=True)
         self.logger.info("Test console log message.")
@@ -250,6 +271,7 @@ class TestMagikLogger(unittest.TestCase):
         """
         Test the change_log_level method.
         """
+
         # Set the log level to DEBUG and check if it is updated correctly
         self.logger.set_log_level("DEBUG")
         self.assertEqual(self.logger.log_level, "DEBUG")
@@ -262,6 +284,7 @@ class TestMagikLogger(unittest.TestCase):
         """
         Test the change_format method.
         """
+
         # Define a new log format
         new_format = "%(asctime)s - %(message)s"
 
@@ -276,6 +299,7 @@ class TestMagikLogger(unittest.TestCase):
         """
         Test the file rotation functionality.
         """
+
         # Set a small max_bytes to trigger file rotation quickly
         self.logger._max_bytes = 100
         self.logger._backup_count = 2
