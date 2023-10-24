@@ -28,7 +28,7 @@
 
     Implemented properties for accessing logger configurations like logger name, path, level, format, etc.
     
-    Added a test suite for the base.py module.
+    Added a comprehensive test suite for the base.py module.
 
 ### Future Extensions
 
