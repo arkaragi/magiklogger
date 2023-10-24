@@ -30,7 +30,6 @@
     
     Added a test suite for the base.py module.
 
-
 ### Future Extensions
 
     Implement a configuration dictionary or class for cleaner management of default parameters.

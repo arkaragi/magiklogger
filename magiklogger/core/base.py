@@ -128,8 +128,10 @@ class BaseLogger:
 
         # Initialize a Logger object with a specified name
         self.logger = logging.getLogger(self._logger_name)
+
         # Explicitly set the logger's level
         self.logger.setLevel(self._log_level)
+
         # Configure the logger
         self._setup_logger()
 
@@ -325,7 +327,8 @@ class BaseLogger:
         # Create a log message formatter
         formatter = self._setup_formatter()
 
-        # If neither console nor file logging is enabled, enable console logging by default
+        # If neither console nor file logging is enabled,
+        # enable console logging by default
         if not self._log_to_console and not self.log_to_file:
             msg = ("At least one logging output should be enabled. "
                    "Enabling console logging by default.")

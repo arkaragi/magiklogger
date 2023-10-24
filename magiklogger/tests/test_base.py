@@ -1,5 +1,7 @@
 """
 Test suite for the core/base.py module
+
+Version: 1.0.0
 """
 
 import logging
@@ -66,8 +68,7 @@ class TestBaseLoggerParams(unittest.TestCase):
         Test case for logger initialization with an invalid logger name.
         """
 
-        # Assert that setting a non-string value as logger_name
-        # raises a TypeError
+        # Assert that setting a non-string value as logger_name raises a TypeError
         with self.assertRaises(TypeError):
             BaseLogger(logger_name=10,
                        logger_path="./logs",
@@ -227,8 +228,7 @@ class TestBaseLoggerParams(unittest.TestCase):
         the maximum limit.
         """
 
-        # Assert that setting a value exceeding the maximum limit
-        # as max_bytes raises a ValueError
+        # Assert that setting a value exceeding the maximum limit as max_bytes raises a ValueError
         with self.assertRaises(ValueError):
             BaseLogger(logger_name="TestBaseLogger",
                        logger_path="./logs",
