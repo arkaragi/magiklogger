@@ -17,6 +17,8 @@ Features
 
 Note: For more detailed configurations and logging capabilities, refer to the
 MagikLogger documentation.
+
+Version: 1.0.0
 """
 
 import datetime
@@ -78,7 +80,11 @@ class MagikSetup:
             "logger_path": "logs",
             "log_level": "INFO",
             "log_to_console": True,
-            "log_to_file": False
+            "log_to_file": False,
+            "max_bytes": 5000000,
+            "backup_count": 5,
+            "log_format": "%(asctime)s - %(levelname)s - %(message)s",
+            "use_color": True,
         }
 
     def __init__(self,
@@ -201,13 +207,25 @@ class MagikSetup:
                 'log_to_console', self.DEFAULT_LOGGER_SETTINGS['log_to_console'])
             log_to_file = config.get(
                 'log_to_file', self.DEFAULT_LOGGER_SETTINGS['log_to_file'])
+            max_bytes = config.get(
+                'max_bytes', self.DEFAULT_LOGGER_SETTINGS['max_bytes'])
+            backup_count = config.get(
+                'backup_count', self.DEFAULT_LOGGER_SETTINGS['backup_count'])
+            log_format = config.get(
+                'log_format', self.DEFAULT_LOGGER_SETTINGS['log_format'])
+            use_color = config.get(
+                'use_color', self.DEFAULT_LOGGER_SETTINGS['use_color'])
 
             # Initialize logger with extracted configurations
             self.logger = MagikLogger(logger_name=logger_name,
                                       logger_path=logger_path,
                                       log_level=log_level,
                                       log_to_console=log_to_console,
-                                      log_to_file=log_to_file)
+                                      log_to_file=log_to_file,
+                                      max_bytes=max_bytes,
+                                      backup_count=backup_count,
+                                      log_format=log_format,
+                                      use_color=use_color)
 
             # Informative logging messages at the initialization of MagikLogger
             self.logger.info("=" * 70)
@@ -217,6 +235,10 @@ class MagikSetup:
             self.logger.info(f"- Logging Level: {log_level}")
             self.logger.info(f"- Log to Console: {log_to_console}")
             self.logger.info(f"- Log to File: {log_to_file}")
+            self.logger.info(f"- Max Bytes: {max_bytes}")
+            self.logger.info(f"- Backup Count: {backup_count}")
+            self.logger.info(f"- Log Format: {log_format}")
+            self.logger.info(f"- Use Color: {use_color}")
             self.logger.info(f"- Initialization Timestamp: {datetime.datetime.now()}")
             self.logger.info("Monitoring logger activities and potential issues...")
             self.logger.info("=" * 70)
