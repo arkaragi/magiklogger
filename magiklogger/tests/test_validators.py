@@ -14,7 +14,7 @@ class TestLoggerValidators(unittest.TestCase):
     Test suite for the LoggerValidators class.
 
     This class contains unit tests for the validation methods provided by the
-    LoggerValidators class. Each test focuses on a specific validation method,
+    LoggerValidators class. Each test focuses on a specific validation method
     ensuring both positive and negative cases are checked.
     """
 
@@ -137,7 +137,8 @@ class TestLoggerValidators(unittest.TestCase):
 
         # Test with an invalid log level
         with self.assertRaises(ValueError):
-            LoggerValidators.validate_log_level("INVALID_LEVEL", valid_log_levels)
+            LoggerValidators.validate_log_level(log_level="INVALID_LEVEL",
+                                                valid_log_levels=valid_log_levels)
 
     def test_validate_log_level_case_insensitive(self):
         """
@@ -151,10 +152,12 @@ class TestLoggerValidators(unittest.TestCase):
         valid_log_levels = {"INFO", "DEBUG", "ERROR"}
 
         # Test with a valid log level in lowercase
-        LoggerValidators.validate_log_level("info", valid_log_levels)
+        LoggerValidators.validate_log_level(log_level="info",
+                                            valid_log_levels=valid_log_levels)
 
         # Test with a valid log level in mixed case
-        LoggerValidators.validate_log_level("dEbuG", valid_log_levels)
+        LoggerValidators.validate_log_level(log_level="dEbuG",
+                                            valid_log_levels=valid_log_levels)
 
     def test_validate_log_to_console(self):
         """
@@ -175,7 +178,7 @@ class TestLoggerValidators(unittest.TestCase):
         """
         Test the validate_log_to_file method of LoggerValidators class.
 
-        This test ensures that the method correctly validates the 'log_to_file'
+        This test ensures that the method correctly validates the log_to_file
         flag, and raises appropriate exceptions for non-boolean inputs.
         """
 
@@ -245,17 +248,19 @@ class TestLoggerValidators(unittest.TestCase):
         valid_formats = {"FORMAT1", "FORMAT2"}
 
         # Test with a valid format
-        LoggerValidators.validate_log_format("FORMAT1", valid_formats)
+        LoggerValidators.validate_log_format(log_format="FORMAT1",
+                                             valid_formats=valid_formats)
 
         # Test with an invalid format
         with self.assertRaises(ValueError):
-            LoggerValidators.validate_log_format("INVALID_FORMAT", valid_formats)
+            LoggerValidators.validate_log_format(log_format="INVALID_FORMAT",
+                                                 valid_formats=valid_formats)
 
     def test_validate_use_color(self):
         """
         Test the validate_use_color method of LoggerValidators class.
 
-        This test ensures that the method correctly validates the 'use_color'
+        This test ensures that the method correctly validates the use_color
         flag, and raises appropriate exceptions for non-boolean inputs.
         """
 
@@ -268,10 +273,11 @@ class TestLoggerValidators(unittest.TestCase):
 
     def test_validate_directory_is_writable(self):
         """
-        Test the validate_directory_is_writable method of LoggerValidators class.
+        Test the validate_directory_is_writable method of LoggerValidators
+        class.
 
-        This test ensures that the method can correctly validate directory paths
-        for existence and writability.
+        This test ensures that the method can correctly validate directory
+        paths for existence and writability.
         """
 
         # Assuming a temporary directory that does exist and is writable

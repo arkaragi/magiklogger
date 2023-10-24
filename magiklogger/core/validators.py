@@ -27,7 +27,7 @@ class LoggerValidators:
     def validate_string_parameter(param: str,
                                   param_name: str) -> None:
         """
-        Validates if a given parameter is a non-empty string.
+        Validate if a given parameter is a non-empty string.
 
         Parameters
         ----------
@@ -43,7 +43,8 @@ class LoggerValidators:
             If the provided parameter is not of type 'str'.
 
         ValueError
-            If the provided string is empty or consists solely of whitespace.
+            If the provided string is empty or consists solely
+            of whitespace.
 
         Example
         -------
@@ -68,7 +69,7 @@ class LoggerValidators:
     def validate_boolean_parameter(param: bool,
                                    param_name: str) -> None:
         """
-        Validates if a given parameter is a boolean.
+        Validate if a given parameter is a boolean.
 
         Parameters
         ----------
@@ -102,8 +103,7 @@ class LoggerValidators:
                                    min_val: Optional[int] = None,
                                    max_val: Optional[int] = None) -> None:
         """
-        Validates if a given parameter is an integer within the specified
-        range.
+        Validate if a given parameter is an integer within the specified range.
 
         Parameters
         ----------
@@ -171,7 +171,7 @@ class LoggerValidators:
         Parameters
         ----------
         logger_path: str
-            Path to the log file to validate.
+            The logger path to validate.
         """
 
         # Validate that the provided logger_path parameter is a string
@@ -187,7 +187,7 @@ class LoggerValidators:
         Parameters
         ----------
         log_level: str
-            Log level to validate.
+            The log level to validate.
 
         valid_log_levels: Set[str]
             A set of valid log levels.
@@ -212,30 +212,32 @@ class LoggerValidators:
     @staticmethod
     def validate_log_to_console(log_to_console: bool) -> None:
         """
-        Validates the 'log_to_console' parameter.
+        Validate the provided log_to_console parameter.
 
         Parameters
         ----------
         log_to_console: bool
-            A flag determining whether logs should be output to the console.
+            A flag determining whether logs should be output to the
+            console.
         """
 
-        # Validate if log_to_console is a boolean
+        # Validate that the provided log_to_console parameter is a boolean
         LoggerValidators.validate_boolean_parameter(param=log_to_console,
                                                     param_name="log to console")
 
     @staticmethod
     def validate_log_to_file(log_to_file: bool) -> None:
         """
-        Validates the 'log_to_file' parameter.
+        Validate the provided log_to_file parameter.
 
         Parameters
         ----------
         log_to_file: bool
-            A flag determining whether logs should be written to a file.
+            A flag determining whether logs should be written to
+            a file.
         """
 
-        # Validate if log_to_file is a boolean
+        # Validate that the provided log_to_file parameter is a boolean
         LoggerValidators.validate_boolean_parameter(param=log_to_file,
                                                     param_name="log to file")
 
@@ -251,7 +253,7 @@ class LoggerValidators:
             Should be a positive integer less than or equal to 50,000,000.
         """
 
-        # Using the existing integer validation method
+        # Validate that the provided max_bytes parameter is an integer
         LoggerValidators.validate_integer_parameter(param=max_bytes,
                                                     param_name="max_bytes",
                                                     min_val=1,
@@ -269,7 +271,7 @@ class LoggerValidators:
             Should be a positive integer less than or equal to 20.
         """
 
-        # Using the existing integer validation method
+        # Validate that the provided backup_count parameter is an integer
         LoggerValidators.validate_integer_parameter(param=backup_count,
                                                     param_name="backup_count",
                                                     min_val=1,
@@ -296,10 +298,11 @@ class LoggerValidators:
             acceptable formats.
         """
 
-        # Using the existing string validation method
+        # Validate that the provided log_format parameter is a string
         LoggerValidators.validate_string_parameter(param=log_format,
                                                    param_name="log_format")
 
+        # Check if the log_format value is in the accepted formats
         if log_format not in valid_formats:
             raise ValueError(
                 f"LoggerValidators Error.\n"
@@ -309,7 +312,7 @@ class LoggerValidators:
     @staticmethod
     def validate_use_color(use_color: bool) -> None:
         """
-        Validates the 'use_color' parameter.
+        Validates the use_color parameter.
 
         Parameters
         ----------
@@ -318,7 +321,7 @@ class LoggerValidators:
             enhanced readability.
         """
 
-        # Using the existing boolean validation method
+        # Validate that the provided use_color parameter is a boolean
         LoggerValidators.validate_boolean_parameter(param=use_color,
                                                     param_name="use_color")
 
@@ -338,7 +341,7 @@ class LoggerValidators:
            If the provided directory path is not writable.
         """
 
-        # Check if the directory is writable
+        # Check if the provided directory is writable
         if not os.access(directory, os.W_OK):
             raise ValueError(
                 f"LoggerValidators Error.\n"

@@ -1,6 +1,6 @@
 # Changelog for LoggerValidators Class
 
-## Version 1.0.0 - [2023-10-23]
+## Version 1.0.0 - [2023-10-24]
 
 ### Added
 
@@ -21,8 +21,7 @@
         - Usage of colored output
         - Directory write permission validation
 
-    Added a test suite for the validators.py module.
-    
+    Added a copmrehensive test suite for the validators.py module.
 
 ### Future Extensions
 
