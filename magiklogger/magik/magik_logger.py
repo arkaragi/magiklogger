@@ -101,7 +101,7 @@ class MagikLogger(BaseLogger):
     """
 
     def __init__(self,
-                 logger_name: Optional[str] = "MagikLogger.log",
+                 logger_name: Optional[str] = "MagikLogger",
                  logger_path: Optional[str] = "logs",
                  log_level: str = "INFO",
                  log_to_console: bool = True,
