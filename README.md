@@ -40,11 +40,11 @@ To install MagikLogger, follow these steps:
 
 1. Clone the MagikLogger repository from GitHub:
 
-       git clone https://github.com/arkaragi/magik_logger.git
+       git clone https://github.com/arkaragi/magiklogger.git
 
 2. Change your current directory to the cloned repository
 
-       cd magik_logger
+       cd magiklogger
 
 3. Install the package using pip
 
@@ -56,16 +56,16 @@ Import the MagikLogger from the magik_logger package. Initialize the logger with
 
 Here's a simple example: 
     
-    from magik_logger.magik.logger import MagikLogger
+    from magiklogger.magik.magik_logger import MagikLogger
     
-    # create a logger instance
+    # Create a logger instance
     logger = MagikLogger(logger_name="AppLogger",
                          logger_path="logs",
                          log_to_console=True,
                          log_to_file=False,
                          log_level="INFO")
     
-    # log a message
+    # Log a message
     logger.info("This is a test log message.")
 
 

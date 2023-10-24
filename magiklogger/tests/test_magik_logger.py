@@ -10,7 +10,7 @@ import unittest
 
 from unittest.mock import patch
 
-from magiklogger.magiklogger.magik.magik_logger import MagikLogger
+from magiklogger.magik.magik_logger import MagikLogger
 
 
 class TestMagikLogger(unittest.TestCase):

@@ -6,7 +6,7 @@ Version: 1.0.0
 
 import unittest
 
-from magiklogger.magiklogger.core.validators import LoggerValidators
+from magiklogger.core.validators import LoggerValidators
 
 
 class TestLoggerValidators(unittest.TestCase):

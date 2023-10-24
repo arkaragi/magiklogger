@@ -10,7 +10,7 @@ from logging.handlers import RotatingFileHandler
 import unittest
 import pathlib
 
-from magiklogger.magiklogger.core.base import BaseLogger
+from magiklogger.core.base import BaseLogger
 
 
 class TestBaseLoggerParams(unittest.TestCase):

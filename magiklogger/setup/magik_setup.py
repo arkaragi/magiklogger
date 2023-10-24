@@ -28,7 +28,7 @@ import pathlib
 
 from typing import Optional
 
-from magiklogger.magiklogger.magik.magik_logger import MagikLogger
+from magiklogger.magik.magik_logger import MagikLogger
 
 
 class MagikSetup:

@@ -38,7 +38,7 @@ import traceback
 from logging.handlers import RotatingFileHandler
 from typing import Optional
 
-from magiklogger.magiklogger.core.base import BaseLogger
+from magiklogger.core.base import BaseLogger
 
 
 class MagikLogger(BaseLogger):

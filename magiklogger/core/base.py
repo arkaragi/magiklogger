@@ -21,7 +21,7 @@ from typing import Optional
 
 import coloredlogs
 
-from magiklogger.magiklogger.core.validators import LoggerValidators
+from magiklogger.core.validators import LoggerValidators
 
 
 class BaseLogger:
