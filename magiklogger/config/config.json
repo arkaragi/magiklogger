@@ -1,0 +1,9 @@
+{
+    "magik_logger": {
+        "logger_name": "MagikLogger",
+        "logger_path": "logs",
+        "log_level": "DEBUG",
+        "log_to_console": true,
+        "log_to_file": false
+    }
+}
