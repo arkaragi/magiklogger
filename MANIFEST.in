@@ -1,0 +1,9 @@
+# Include the config.json file
+include magiklogger/config/config.json
+
+# Include the LICENSE.txt and VERSION.md
+include LICENSE.txt
+include VERSION.md
+
+# Optionally include the example scripts
+recursive-include examples *.py
