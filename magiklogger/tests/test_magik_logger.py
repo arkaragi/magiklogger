@@ -1,5 +1,5 @@
 """
-Test cases for module: magik_logger.py
+Test suite for the magik/magik_logger.py module
 """
 
 import logging
